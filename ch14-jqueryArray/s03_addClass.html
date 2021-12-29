@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>addClass</title>
+<style type="text/css">
+	.high_light_0 {backgroud:yellow;}
+	.high_light_1 {backgroud:orange;}
+	.high_light_2 {backgroud:blue;}
+	.high_light_3 {backgroud:green;}
+	.high_light_4 {backgroud:red;}
+	
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('h1').each(function(index,item){
+			//index: 배열의 인덱스
+			//item:문서 객체(태그)
+			//h1태그
+			$(item).addClass('high_light_'+index); //권장안함 굳이 반복문으로 안쓰고 addClass의 내부 반복문을 이용한다
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>item-0</h1>
+	<h1>item-1</h1>
+	<h1>item-2</h1>
+	<h1>item-3</h1>
+	<h1>item-4</h1>
+	
+</body>
+</html>

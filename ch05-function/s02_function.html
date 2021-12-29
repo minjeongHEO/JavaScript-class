@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+//js에서 함수 사용 시 조심할 점
+	
+	//함수의 이름이 같으면 마지막에 정의한 함수가 동작
+	function 함수(){
+		document.write('함수A<br>');
+	}
+	function 함수(){ //이름이 같아도 충돌안난다./ 자바에서는 오버로딩으로 이름이 같으면 충돌방지했었다.
+		document.write('함수B<br>');
+	}
+	
+	//함수 호출
+	함수();
+
+	document.write('----------------<br>');
+	
+	//호출 후 정의 (함수 호이스팅)
+	//호출이 돼서 동작이 되긴함
+	함수2();
+	
+	function 함수2(){
+		document.write('함수2<br>');
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

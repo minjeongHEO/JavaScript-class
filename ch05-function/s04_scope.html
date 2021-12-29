@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전역변수와 지역변수</title>
+<script type="text/javascript">
+//자바에서 명칭은 멤버변수 지역변수
+/*
+ 1.지역변수(함수 레벨 스코프)
+ 함수 안에서 var를 사용해서 선언한 변수
+ 함수가 끝나면 소멸한다.
+ 
+ 2.전역변수
+ 함수 밖에서 만들어진 모든 변수 (var붙여서, 권장사항)
+ 함수 안에서 var없이 만들어진 변수 (너무 전역변수를 남발하게되므로 권장x)
+ 함수가 끝나도 메모리에 남아있다.
+ */
+ 	function test1(){
+		var i = 10;//지역변수
+		document.write(i + '<br>');
+	};
+	//함수호출
+	test1();
+	//지역변수는 함수가 종료되면 소멸되기 때문에 함수 밖에서 호출이 불가능
+	//document.write(i+ '<br>');
+	
+	
+	var j; //전역변수
+	function test2(){
+		j = 200;
+		document.write(j+'<br>');
+	}
+	//함수 호출
+	test2();
+	
+	function test3(){
+		document.write(j+'<br>');//전역 변수
+	}
+	//함수 호출
+	test3();
+	
+	//var를 명시하지 않고 전역변수를 만들면 선언과 함께 초기화 해야함 그러나 이것은 혼동의 여지가 있기에 쓰지않는다.
+	//a;//var를 붙이지않고 전역변수를 만들려면 초기화를 해줘야한다.
+	a=10;
+	function test4(){
+		a = 100;
+		document.write(a+'<br>');
+	}
+	//함수 호출
+	test4();
+	
+	function test5(){
+		m = 300;//전역변수(함수안에 var를 안붙이고 명시) 권장x
+		document.write(m+'<br>');
+	}
+	//함수 호출
+	test5();
+	
+	function test6(){
+		document.write(m);//전역변수
+	}
+	test6();	
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>

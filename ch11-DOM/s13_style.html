@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 스타일 처리</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var header = document.getElementById('header');//id를통해 h1접근
+		/*
+		CSS backgroud-color속성은 자바스크립트에선 backgroundColor로 명시해야함
+		자바스크립트에서 식별자에 '-'를 사용할 수 없음
+		*/
+		
+		//스타일처리
+		header.style.border = '2px solid black';
+		header.style.color = 'orange';
+		//에러:header.style.font-family = 'Helvetica';//font-family: CSS의 속성명에서 하이픈(-) 인정하지만 JS에서는 식별자에 - 쓸수없다
+		header.style.fontFamily = 'Helvetica';//식별자에 -빼고 뒷문자를 대문자로 바꿔준다
+		header.style.backgroundColor = 'yellow';
+	};
+</script>
+</head>
+<body>
+	<h1 id="header">Header</h1>
+</body>
+</html>

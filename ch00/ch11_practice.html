@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var exam = document.getElementById('foo');
+		var foomatch = document.getElementsByClassName("matched");
+		var output='';
+		for(var i=0; i<foomatch.length;i++){
+			output += foomatch[i].innerHTML+'\n';
+		}
+		alert(output);
+	};
+</script>
+</head>
+<body>
+	<p id="foo">
+		<span class="matched">a</span>
+		<span class="matched unmatched">b</span>
+		<span class="unmatched">c</span>
+	</p>
+	<p id="bar">
+		<span class="matched">x</span>
+</body>
+</html>

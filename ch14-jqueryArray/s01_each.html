@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//window.onload= function(){};랑 같은거라고 보면 된다.
+	$(document).ready(function(){ //이형태가 가장많이 사용
+		//배열 생성
+		var array = [
+			{name:'naver',link:'https://www.naver.com'},
+			{name:'daum',link:'https://www.daum.net'},
+			{name:'google',link:'https://www.google.co.kr'},
+			{name:'nate',link:'https://www.nate.com'},
+		];
+			 //배열    배열로부터 데이터를 받아서 처리하는 함수
+		$.each(array,function(index,item){
+							//index: 배열의 index
+							//item: 배열의 index를 통해 접근한 객체(key:value)
+			var output = '';
+			output += '<h1>';
+			output += '<a href="' + item.link + '">' + item.name +'</a>'; //'는 js의 작은따옴표 "는href의 "
+			output += '</h1>';
+			
+			document.body.innerHTML += output;				
+		});
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

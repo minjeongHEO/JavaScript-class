@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성 및 속성 처리</title>
+<script type="text/javascript">
+	window.onload= function(){
+		var img = document.createElement('img');//img태그 생성
+		//img 태그의 속성을 사용
+		img.src = '../images/Penguins.jpg';
+	 	img.width = 500;
+		img.height = 350; 
+		
+		//만들어진 이미지를 바디에 노드연결
+		document.body.appendChild(img);
+		
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

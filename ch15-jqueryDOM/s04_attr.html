@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 속성 처리</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	//$(document).ready(function(){});
+	//$(function(){});//축약형
+	$(function(){
+		//img태그에 접근해서 src 속성 정보 읽기
+		var src = $('img').attr('src');
+		alert(src);//alert는 html요소가 아니고 브라우저가 만든요소라 먼저 뜨는것이다.
+	});
+</script>
+</head>
+<body>
+	<img src="../images/Koala.jpg">
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>encoding 관련 함수</title>
+<script type="text/javascript">
+/*
+ 함수 이름						설명
+ escape(uri)				적절한 정도로 인코딩함 //문자열을 부호로 바꾸는 것
+ unescape(uri)				적절한 정도로 디코딩함
+ encodeURI(uri)				최소한의 문자만 인코딩함
+ decodeURI(uri)				최소한의 문자만 디코딩함
+ encodeURIComponet(uri)		대부분의 문자를 인코딩함
+ decodeURIComponet(uri)		대부분의 문자를 디코딩함
+ 
+ 
+ */
+ 	//인코딩할 URL
+ 	var URI = 'http://www.test.co.kr?test=한글입니다.'; 
+ 	//출력용 변수 선언 및 초기화
+ 	var output = ''; //빈문자열을 넣어봄
+ 	output += '*escape()<br>'; //+= 대입연산자
+ 	output += escape(URI) + '<br><br>'; //, ? = 한글 이 바뀌었다.
+ 	output += '*encodeURI()<br>';
+ 	output += encodeURI(URI) + '<br><br>'; //한글만 인코딩
+ 	output += '*encodeURIComponent()<br>';
+ 	output += encodeURIComponent(URI)+'<br><br>'; //.제외한 기호들을 대부분 인코딩
+ 	
+ 	//출력
+ 	document.write(output);
+ 	
+ 	var urix = escape(URI);
+ 	document.write(unescape(urix));//디코딩
+ 	
+ 	
+ 	
+</script>
+</head>
+<body>
+
+</body>
+</html>

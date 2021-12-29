@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/*
+ [문제]성적을 prompt로 입력 받아서 배열(score)에 담고 총점과 평균을 구하고
+ 총점(sum)과 평균(avg)을 출력하시오
+ 
+ */
+/*  
+ 	var korean = prompt('국어성적을 입력하세요','');
+ 	var english = prompt('영어성적을 입력하세요','');
+ 	var math = prompt('수학성적을 입력하세요','');
+ 	
+ 	var score=[korean, english, math];
+	var sum = 0;
+	var avg;
+	//인덱스 in 배열
+	for(var i in score){
+		sum += parseInt(score[i]);
+	}
+	avg = sum/3;
+	
+	document.write('총점 : ' +sum+ ' ,평균 : ' +avg); */
+		
+ 	
+ 	var score=[];
+	var sum=0, avg=0;
+	
+	var korean = prompt('국어성적을 입력하세요','');
+ 	var english = prompt('영어성적을 입력하세요','');
+ 	var math = prompt('수학성적을 입력하세요','');
+ 	
+ 	if(korean<0 || korean>100 || english<0 || english>100 || math<0 || math >100){
+ 		document.write('성적은 0부터 100까지만 입력 가능합니다.')
+ 	}else{
+ 		//배열에 데이터 삽입
+ 		score.push(Number(korean),Number(english),Number(math));
+ 		
+ 		for (var i=0; i<score.length;i++){
+ 			//총점 구하기
+ 			sum += score[i];
+ 		}
+ 		
+ 		//평균 구하기
+ 		avg = sum/score.length;
+ 		
+ 		document.write('총점: '+sum+'<br>');
+ 		document.write('평균: '+avg);
+ 	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

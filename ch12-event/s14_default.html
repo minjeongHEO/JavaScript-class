@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 이벤트</title>
+<script type="text/javascript">
+window.onload = function(){
+	var alink = document.getElementById('alink');
+	//이벤트 연결
+	alink.onclick = function(){
+		alert('이벤트 연결');
+		
+		//기본 이벤트 제거
+		return false; //이걸명시안하면 이중으로 적용된다. 위에꺼 아래꺼
+	};
+	
+	//form
+	var myForm = document.getElementById('myForm');
+	//이벤트 연결
+	myForm.onsubmit=function(){
+		var name = document.getElementById('name');
+		alert(name.value);
+		
+		//기본 이벤트 제거
+		return false; //이걸명시안하면 경고창이나오고 끝나는게아니라 submit해버린다.
+	}
+};
+	</script>
+</head>
+<body>
+<a id="alink" href="http://www.naver.com">이동</a>
+<form id ="myForm" action="a.jsp" method="post">
+	이름<input type="text" name="name" id="name">
+	<input type="submit" value="전송">
+</form>
+<!-- 기본이벤트를 사용할꺼면 자바스크립트연결 x -->
+</body>
+</html>

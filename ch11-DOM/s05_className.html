@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스명을 이용한 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload = function() {
+		//클래스 명을 이용해서 문서 객체 탐색
+		//클래스명은 중복될 수 있기 때문에 탐색한 문서객체의 정보를 배열로 반환
+
+/* 		 	//CASE1>
+			var foo = document.getElementsByClassName('matched');
+			var output = '';
+			for(var i=0; i<foo.length;i++){
+				output += foo[i].innerHTML + '\n'; //HTML화면이아니라 'br'이 아니라''\n' alert창에서 줄바꿈
+			}
+			alert(output);
+		};  */
+
+/* 		 	//CASE2>	
+			//클래스명이 여러개인 경우 공백을 구분자로 해서 문자열로 전달
+			//클래스의 순서는 변경해도 된다
+			var fooMatch = document.getElementsByClassName('matched unmatched');
+			//복수의 태그가 있을 수 있어서 배열로 반환됨(복수의 태그가있다는 전제하에 코드를 작성한다.)
+			var output2 = '';
+			for(var i=0;i<fooMatch.length;i++){
+				output2 += fooMatch[i].innerHTML  +'\n';
+			}
+			alert(output2);
+		};   */
+
+			//CASE3>
+			var foo2 = document.getElementById('foo');//위에있는 p태그만 가리킨다 
+			var fooMatch2 = foo2.getElementsByClassName('matched'); //foot2가아니라 document를 사용하면 밑의p태그도 읽어온다.
+			var output3 = '';
+			for (var i = 0; i < fooMatch2.length; i++) {
+				output3 += fooMatch2[i].innerHTML + '\n';
+			}
+			alert(output3);
+		}; 
+</script>
+</head>
+<body>
+	<p id="foo">
+		<span class="matched">a</span> 
+		<span class="matched unmatched">b</span>
+		<!-- 클래스의 순서는 없다 변경해도 무관 -->
+		<span class="unmatched">c</span>
+	</p>
+	<p id="bar">
+		<span class="matched">x</span>
+</body>
+</html>

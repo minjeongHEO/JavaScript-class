@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성과 메서드 사용</title>
+<script type="text/javascript">
+	//객체의 생성
+	var person = {};//중괄호마 ㄴ명시해도 객체가 생성된것임
+	//여기에 속성까지 넣어본다
+	var person = {
+			//속성지정
+			name:'홍길동',
+			
+			//메서드 지정(속성지정의 연장선,값을 넣는데 값이 함수.익명함수 대입), 객체안에 포함되있는 함수를 메서드라고 부른다.
+			/* eat:function(){
+				alert('밥을 먹습니다.');
+			}, */
+			
+			/* eat2:function(food){
+				alert(food+'을 먹습니다.');
+			} */
+			
+			eat3:function(food){
+				//var name = '강호동';//지역 변수
+				
+				//name이라는 지역변수를 먼저 찾고 그담 전역변수를 찾느다 객체안에 포함되어있는 속성을 따로 찾게해야한다. 이떄 dis.name명시한다.
+				//this : 메서드 내에서 자기 자신이 가지고있는 속성을 호출하고 싶을 때 객체 내부에서 객체를 참조할 때 사용
+				//this를 붙이지 않고 name으로 만 명시하면 
+				alert(name+'이/가 '+food+'을/를 먹습니다.');
+			}
+	};
+	//객체의 속성 호출
+	//document.write(person.name+'<br>'); //객체의 하위요소 호출하기 :점(.)
+	//객체의 메서드 호출,소괄호가 있어야 호출된다
+	//person.eat();
+	//person.eat2('빵');
+	person.eat3('팥');
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

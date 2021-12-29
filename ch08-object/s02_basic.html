@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문을 이용해서 객체의 속성 읽기</title>
+<script type="text/javascript">
+	var product ={
+			//속성(key(프로퍼티):value)
+			name:'eclipse',
+			price:'10,000원',
+			language:'한국어',
+			supportOS:'win10',
+			subscription:true
+	};
+	
+	//일반 반복문은 안돼고 forin반복문만 가능함
+	//forin반복문을 이용해서 객체의 속성 읽기
+		// key(문자열) in  객체 {(key값을 반환)
+	for(var key in product){
+		//document.write(key+'<br>');	
+		//document.write(key+':'+product.key+'<br>'); //불가능 ().은 키자체를 넣어줘야해서)
+		//document.write(key+':'+product[key]+'<br>'); //key의 자료형이 문자열이라서 가능
+		document.write(typeof(key)+':'+product[key]+'<br>'); //그렇다면 key의 타입이 문자열인지 확인해보자
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

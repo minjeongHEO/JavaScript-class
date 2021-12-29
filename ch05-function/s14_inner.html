@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부 함수</title>
+<script type="text/javascript">
+	function f(){
+		//변수 선언 및 초기화
+		var n=123;//지역변수
+		//내부함수
+		function g(){
+			document.write('n is'+n+'<br>'); //클로저 현상. n은 지역변수인데 사용됐음
+			document.write('g is called<br>');
+		}
+		return g; //호출이 아니라 g함수자체를 반환
+	}
+	//함수호출
+	var m= f();//g정보를 m에 담는다
+	document.write(m+'<br>');
+	
+	
+	document.write('--------------------<br>');
+	
+	//변수 m에 대입된 g 함수를 호출
+	m();
+	document.write('--------------------<br>');
+	f()()//g함수 자체(f())를 호출(소괄호)하려면
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

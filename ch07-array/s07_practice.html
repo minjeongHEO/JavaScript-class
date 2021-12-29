@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/*
+ [문제]57,88,100,94,23,33을 요소로 갖는 배열을 생성한 후 최대값(max)과 최소값(min)을 구하시오.
+ */
+/* 	var array = [57,88,100,94,23,33];
+	
+	for(var i in array){
+	if(array[i]>array[i+1]){
+		atmp =0;
+		array[i] array[i+1]
+		atmp = array[i] */
+		
+	//배열생성
+	var score = [57,88,100,94,23,33];
+	var max = score[0], min=score[0];
+	
+	//for in 반복문을 이용해서 배열의 요소 호출
+		//인덱스 in 배열
+	for(var i in score){
+		if(max<score[i]){
+			max =score[i];
+		}
+		if(min>score[i]){
+			min = score[i];
+			}
+		}
+	document.write('최대값: '+ max + '<br>');
+	document.write('최소값: '+ min + '<br>');
+	
+</script>
+	
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수</title>
+<script type="text/javascript">
+/*
+ * 변수명의 정의
+ 1.키워드(예약어)를 사용하면 안됌
+ 2. 숫자로 시작하면 안됌
+ 3. 특수문자_와 $만 허용
+ 4. 공백 문자를 포함할 수 없음
+
+식별자를 잘못 지정한 예
+break(키워드)
+10alpha(숫자로 시작)
+#num (특수문자 사용)
+has spac(공백 사용)
+ */ 
+//변수의 선언
+var num;
+
+//변수에 값을 할달
+num=123;
+
+//출력
+document.write('num='+num);
+document.write('<br>');
+
+//변수를 선언하고 초기화를 동시에 처리
+var num2 = 1234;
+document.write('num2 = ' + num2);
+document.write('<br>');
+
+//아무데이터를 넣고 넣는순간 키보드배열인식
+
+//변수를 선언하지 않고 출력
+/* alrer(num3); 선언안하고 호출해서 에러남 */
+
+//변수 선언 후 값을 할당하지 않고 출력
+var num4;
+document.write('num4 = '+ num4);
+document.write('<br>');
+
+//두 개 이상의 변수를 한 번에 선언
+var a,b;
+a=10;
+b=5;
+ 
+document.write('a + b = '+( a + b));
+document.write('<br>');
+
+var c = 10, d=3.5;
+
+document.write('c+d='+(c+d));
+document.write('<br>');
+
+//한글 사용하기
+var 번호 =3;
+document.write('번호='+번호);
+document.write('<br>------------------<br>');
+
+//선호출 후선언 변수 호이스팅
+document.write(score);
+
+//변수 선언
+var score; //에러는 안나지만 undifined가 나온다.->변수 호이스팅
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

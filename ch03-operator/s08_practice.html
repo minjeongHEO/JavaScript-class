@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/*
+ *prompt를 이용해서 국어(korean),영어(english),수학(math)을 입력받아서 
+ 총점sum, 평균avg을 구해서 출력하시오
+출력예시
+국어 : 90
+영어 : 90
+수학 : 90
+총점 : 270
+평균 : 90
+ */
+var korean = prompt('국어 :','국어점수');
+var english = prompt('영어 :','영어점수');
+var math = prompt('수학 :','수학점수');
+
+var sum = Number(korean) + Number(english) + Number(math);
+
+/* var sum = korean+english+math; 형변환 해야함*/
+var avg = sum/3; 
+document.write('국어 : '+korean+'<br>');
+document.write('영어 : '+english+'<br>');
+document.write('수학 : '+math+'<br>');
+document.write('총점 : '+sum+'<br>');
+document.write('평균 : '+avg);//특정자리수까지 출력은 함수 배운뒤
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

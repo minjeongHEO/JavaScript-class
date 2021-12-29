@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function returnTest1(x,y){
+		return x+y;
+	}
+	//함수호출
+	var result = returnTest1(3,5);
+	document.write(result+'<br>');
+	document.write('-------------------<br>');
+	
+	function returnTest2(){
+		document.write('문장 A<br>');
+		
+		for(var i=1;i<=10;i++){
+			//조건문
+			if(i==5){
+				//i가 5일 경우 함수를 빠져나가서 함수가 종료됨, void형 메서드일 경우에 쓴다. 
+				//return; //반복문이아니라 함수를 빠져나가기위함
+
+				break; //i가 5이면 현재 반복을 중단하고 for문을 빠져나간다.(반복문만 빠져나감)
+			}
+			document.write(i+'<br>');
+		}//for문
+		document.write('문장 B'); //return시 실행못함, break시 실행
+	}
+	//함수 호출
+	returnTest2();
+</script>
+</head>
+<body>
+
+</body>
+</html>

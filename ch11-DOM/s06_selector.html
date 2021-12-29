@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자를 이용한 태그탐색</title>
+<script type="text/javascript">
+	window.onload = function() { //밑에있는 태그들을 인식해야하므로
+		//선택자를 이용해서 태그를 탐색	(태그/아이디/..)클래스선택자
+		var elem = document.querySelector('.banana');//.querySelector(선택자):하나의 태그에 접근
+		//var elem = document.querySelector('li');//querySelector(선택자):하나의 태그에 접근, 중복이 됬다하더라도 가장위에있는 태그만 적용
+		//js에서 style변경시 style속성에 하위속정까지 지정한다
+		elem.style.color = 'red';
+	};
+</script>
+</head>
+<body>
+	<ul>
+		<li class="apple">Apple</li>
+		<li class="banana">Banana</li>
+		<li class="orange">Orange</li>
+	</ul>
+</body>
+</html>

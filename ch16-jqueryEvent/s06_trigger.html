@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 강제 발생</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//이벤트 연결
+					//이벤트명  이벤트핸들러
+		//$('h1').on('click',function(){});
+		$('h1').on('click',function(){
+			$(this).html(function(index,html){
+				return html + '*';
+			});
+		});
+		
+		//1초마다 매개변수로 전달된 함수를 실행
+		//setInterval(function(){},1000);
+		setInterval(function(){
+			//이벤트 강제 발생
+			$('h1').trigger('click');
+		},1000);
+	});
+</script>
+</head>
+<body>
+	<h1>Start : </h1> <!-- 현재태그들 --> <!-- 미래태그 : 제이쿼리를 이용해 만들어낸 태크들 -->
+</body>
+</html>

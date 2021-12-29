@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>논리 연산자</title>
+<script type="text/javascript">
+	document.write('====논리연산자====<br>')
+	
+	var a = true && false;//논리곱은 둘다 true여야함
+	document.write('true&&false : '+a+'<br>');
+	
+	var b = true || false;//논리합
+	document.write('true||false : '+b+'<br>');
+
+	var c = !true;//논리부정
+	document.write('!true : '+c+'<br>');
+	
+	document.write('-----------추가된 내용---------<br>')
+	
+	var d = 1, e = 0, f; //1을 true로, 0을 false로 논리연산을 시킬 수 있다.
+	f= d&&e; //논리 곱
+	document.write('d && e : '+ f + '<br>');
+	
+	f= d || e;
+	document.write('d || e : '+ f + '<br>');
+	
+	f= !d;
+	document.write('!d : '+ f);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>name속성을 이용한 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload=function(){ //지연시키기
+		//name 속성을 이용해서 문서 객체 탐색(name은 중복되는 경우가있따)
+		//name 속성은 중복될 수 있기 때문에 name속성으로 문서 객체를 탐색하면 배열로 반환한다.
+		var prev = document.getElementsByName('prev');//그래서"s"
+		var next = document.getElementsByName('next');//그래서"s"
+		
+		//다이렉트로 가르키지않고 배열을 가르키고, 그담겨있는 정보가 button태그의 prev 가르킨다
+		prev[0].innerHTML = '이전';
+		next[0].innerHTML = '다음';
+		
+		var country = document.getElementsByName('country');
+		country[0].checked = true;// 해당 체크박스가 선택되도록
+		
+		var comment = document.getElementsByName('comment');
+		comment[0].value = '간단한 설명 입력'; //태그 안에 이 내용이 보여진다.
+	};
+</script>
+</head>
+<body>
+	<button name="prev">prev</button><br>
+	<button name="next">next</button><br>
+
+	<!-- 체크박스는 그룹으로 묶기에 네임이 같다 -->
+	<input type="checkbox" name="country" value="한국">한국
+	<input type="checkbox" name="country" value="미국">미국
+	<input type="checkbox" name="country" value="영국">영국
+	<br>
+	<input type="text" name="comment">
+</body>
+</html>

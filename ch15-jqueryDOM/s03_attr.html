@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 속성 처리</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//$('img').attr('width',100); //attr:셋팅하느 역할, 읽어오는역할 두가지
+
+		/* 
+		$('img').attr('width',function(index){//attr이 내부적으로 루프 돌기 때문
+			return (index +1)*100;//return값을 attr로 전달하면 width로 셋팅한다.
+		});
+		 */
+		
+		 $('img').attr({
+			 width:function(index){
+				return (index+1) *100; 
+			 },
+			 height:function(index){
+				return (index+1) *100; 
+			 }
+		 });
+		 
+	});
+	
+</script>
+</head>
+<body>
+	<img src="../images/Desert.jpg"><!-- index0 -->
+	<img src="../images/Penguins.jpg"><!-- index1 -->
+	<img src="../images/Koala.jpg"><!-- index2 -->
+</body>
+</html>

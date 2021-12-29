@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>const</title>
+<script type="text/javascript">
+	function test(){
+		const b = 20; //상수 (블록레벨 밖으로나가면 소멸됨)
+		document.write(b+'<br>');
+		
+		//b= 30;//상수는 변경이 불가능하여 에러
+		document.write(b+'<br>');
+	}
+	//함수 호출
+	test();
+	
+	//document.write(b);//상수는 블럭 레벨 스코프이기 떄문에 블럭 밖에서 호출 불가
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onchange</title>
+<script type="text/javascript">
+	function trans(){
+		var x = document.getElementById('name');//id를 통해서 접근해보자 //2
+		//읽어온 데이터를 대문자로 변경해서 저장
+		x.value = x.value.toUpperCase(); //3
+		
+	}
+</script>
+</head>
+<body>
+영어 단어 : <input type="text" id="name" onchange="trans()"> <!-- 1 -->
+<p>입력필드를 벗어나면 대문자로 변경됩니다.</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>radio와 이벤트</title>
+<script type="text/javascript">
+	window.onload = function(){
+		//input을 읽어온다
+		var radios = document.getElementsByTagName('input');
+		//div를 읽어온다
+		var gubun = document.getElementById('yumu');
+		
+		//이벤트 연결
+		for(var i=0;i<radios.length;i++){
+			//radios[i].onclic=function(){};이벤트속성과 이벤트핸들러연결
+			radios[i].onclick=function(){
+				if(radios[0].checked){
+					// 첫번째 radio버튼이 선택되어져있을경우
+					gubun.style.display = 'none';//div숨기기
+				}else{
+					// 두번째 radio버튼이 선택되어져있을 경우
+					gubun.style.display = '';					
+				}
+			};
+		}
+	};
+</script>
+</head>
+<body>
+<form>
+<!-- form은 전송하는게 없으면 안써도됨 -->
+	<input type = "radio" name="price" value="0" checked>무료
+	<input type = "radio" name="price" value="1" checked>유료
+</form>
+<div id="yumu" style="display:none">
+	 유료회원 가입비는 10,000원
+</div>
+</body>
+</html>

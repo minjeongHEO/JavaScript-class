@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	//문서가 준비 완료되면 개매변수로 전달된 함수를 실행
+	//window.onload= function(){};랑 같은거라고 보면 된다.
+	$(document).ready(function(){
+		//태그선택자
+		//$('span') //이렇게만 명시해도 span태그에 접근 가능 그 태그들(body태그 안의 span태그들)을 jQuery객체로 만듦
+		//태그선택자		속성			속성값
+		$('span').css('border','3px solid blue'); //이렇게만 명시해도 span태그에 접근 가능 그 태그들(body태그 안의 span태그들)을 jQuery객체로 만듦
+		//클래스 선택자(.css = 스타일을 제어해주는 메서드)
+		$('.my').css('border','5px solid red');
+		//id선택자
+		$('#content').css('background-color','green');
+	});
+</script>
+</head>
+<body>
+	<p class ="my">jQuery 실습 </p>
+	<div>
+		<div id="content">id값이 content인 div태그</div>
+	</div>
+	<span>span1</span>
+	<span class="my">span2</span>
+</body>
+</html>

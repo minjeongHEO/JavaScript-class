@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열에 객체 저장하기</title>
+<script type="text/javascript">
+	//빈 배열 생성
+	var students = [];
+/* 	성적자체는 각각 달라서 객체에 직접명시
+	총점과 평균은 동적으로 메서드를 만들어서 추가 */
+	
+	//객체(마다 서로 다른 데이터를)를 배열에 저장, 객체는 {}중괄호
+	students.push({이름:'홍길동',국어:100,수학:90,영어:89,과학:91});
+	students.push({이름:'김유신',국어:99,수학:94,영어:82,과학:92});
+	students.push({이름:'이순신',국어:90,수학:93,영어:84,과학:93});
+	students.push({이름:'장영실',국어:97,수학:96,영어:86,과학:94});
+	students.push({이름:'박문수',국어:96,수학:91,영어:83,과학:95});
+	
+	//students 배열내의 모든 객체에 메서드 추가
+	//일반적인 for문 써도 상관없다 선택의 문제!
+		//인덱스 in 배열 (배열로부터 인덱스를 받겠다)
+	for(var i in  students){
+		//총점 구하는 메서드 추가
+		students[i].getSum = function(){//익명함수
+			return this.국어 + this.수학 + this.영어+ this.과학;
+		};
+		
+		//평균 구하는 메서드 추가
+		students[i].getAverage = function(){
+			return this.getSum()/4;
+		};
+	}
+	
+	document.write('이름,총점,평균<br>');
+	for(var i in students){
+		document.write(students[i].이름 + ','+ students[i].getSum() + ',' 
+						+ students[i].getAverage() + '<br>');
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 생성</title>
+<script type="text/javascript">
+//코드가 너무길어져서 일반적으로 잘안쓰이는방법
+
+	window.onload=function(){
+		var header = document.createElement('h1'); //h1 태그 생성
+		var textNode = document.createTextNode('Hello DOM'); //h1태그에 만들어질 텍스트 생성
+		//body의 자식은 h1 ,h1의 자식은 텍스트
+		//생성만해서 끝나는게아니라 노드연결한다.
+		
+		//노드 연결
+		header.appendChild(textNode);//h1태그에 텍스트를 추가
+		//바디접근
+		document.body.appendChild(header);//body에 h1태그를 추가
+	};
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

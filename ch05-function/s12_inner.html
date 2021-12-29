@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부함수</title>
+<script type="text/javascript">
+	function f(){
+		//내부함수 정의 (함수안에 함수를 정의할수있다.)
+		function g(){
+			document.write('g is called');
+		}
+		//내부함수 호출 (함수를 정의하면 함수를 실행해야한다.)
+		g();
+	}
+	//함수 호출
+	f();
+</script>
+</head>
+<body>
+
+</body>
+</html>

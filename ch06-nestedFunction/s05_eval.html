@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>eval</title>
+<script type="text/javascript">
+	//eval(string): string(문자열)을 자바스크립트 코드로 실행
+	
+	var willEval = '';
+	willEval += 'var number = 10;';
+	willEval += 'alert(number);';
+	//willEval += 'var number = 10;';//문자열이 구분이 안가서 ;있어야 실행됨 (라인바이라인으로 구별할 수 있게끔)
+	//willEval += 'alert(number)';//뒤에있어서 ;생략가능
+	
+	//문자열 출력
+	document.write(willEval);
+	
+	//eval 함수를 이용해서 문자열로 되어있는 코드를 자바스크립트 코드로 실행
+	eval(willEval);
+	//alert(number+'<---'); //메모리에 남아있어서 다시한번 호출이 가능하다
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

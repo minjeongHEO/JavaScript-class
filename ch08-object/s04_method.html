@@ -1,0 +1,28 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성과 메서드</title>
+<script type="text/javascript">
+	var mySon ={
+			name:'달봉이',
+			age:7,
+			play:function(){
+				return '축구';
+			},
+			getinfo:function(){
+				document.write(this.name+'는 '+ this.age+ '살이고 '
+						+ this.play() + '를 좋아합니다.');
+			}
+	};
+ 	document.write('이름: ' + mySon.name+'<br>');
+	document.write('나이: ' + mySon.age + '살<br>');
+	document.write('취미: ' + mySon.play()+'<br>');//메서드를 호출하면 데이터를 반환 
+	
+	mySon.getinfo();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

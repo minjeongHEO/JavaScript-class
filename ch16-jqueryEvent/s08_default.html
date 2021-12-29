@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 이벤트</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//이벤트 연결
+		//event 객체를 사용하려면 이벤트 핸들러의 매개변수로 전달
+		//$('a').click(function(){
+		$('a').click(function(event){
+			$(this).css('background-color','skyblue');
+			
+			//기본 이벤트 제거
+			//return false; //이벤트안쓸떄 이걸로 써도 된다.
+			event.preventDefault();
+		});
+	})
+</script>
+</head>
+<body>
+	<h1>
+		<a href="https://www.naver.com">네이버</a>
+	</h1>
+</body>
+</html>

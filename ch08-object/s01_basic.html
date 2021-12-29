@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 생성</title>
+<script type="text/javascript">
+	//객체 생성
+	var product = {}; //비어있는 객체 생성
+
+	var product = { //product로 객체 접근
+		//속성 (key(프로퍼티):value)
+		제품명 : '장미골드Pro',
+		제품번호 : 'A1001',
+		기능 : '멀티윈도우',
+		원산지 : '대한민국',
+		가격 : 1000,
+		업데이트지원 : true
+	};
+	//객체의 속성 호출 (일반적인 방법)
+	document.write(product.제품명 + '<br>');//객체의 하위요소에 접근하기 위해.(점) 찍는다.
+	document.write(product.기능 + '<br>'); //멀티윈도우 출력
+
+	//객체명[key(문자열형식)] (특별한경우에 쓴다) (:키를문자열로 반환하는경우)
+	document.write(product['원산지'] + '<br>') //대한민국 출력
+	document.write(product['가격'] + '<br>') //1000 출력
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//새로운 태그 생성하기
+		//$('<img>')
+		//$('<img>').attr().appendTo('body');
+				
+		$('<img>').attr({
+			src:'../images/Penguins.jpg',
+			width:400,
+			height:250
+		}).appendTo('body');
+		
+	});
+</script>
+</head>
+<body>
+</body>
+</html>

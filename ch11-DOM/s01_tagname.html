@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그명을 이용해서 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		//태그명을 통해서 태그를 탐색
+		//복수의 태그가 존재할 수 있기 떄문에 배열로 반환
+		/* 스판태그까지 다 인식할때가지 기다렸다가 동작
+		document가 전체문서인식하고 태그이름(span)을 통해서 
+		getElement"s"ByTagName이용하여 태그"들"을 탐색한다
+		노드리스트타입(=배열)로 반환하기위해 명칭에 s가 있음 */
+		var spans = document.getElementsByTagName('span');
+		//내용을 제어하는 속성 innerHTML
+		spans[0].innerHTML = '달빛이 찬란한 호수';// 에 데이터를 넣어준다,index0번 첫번째 스판태그 제어
+		spans[1].innerHTML = '흰눈이 눈부신 들판';//index1번 두번쨰 스판태크 제어
+
+	};
+</script>
+</head>
+<body>
+	<span>하늘</span><br>
+	<span>하늘</span>
+</body>
+</html>

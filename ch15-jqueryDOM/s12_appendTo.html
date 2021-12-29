@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		//이미지 넓이 지정
+		$('img').css('width',200);
+		
+		//2초마다 함수를 반복실행
+		setInterval(function(){
+			$('img').first().appendTo('body') //first를 사용해서 img태그의 가장 앞에위치한 태그접근후 body태그의 맨뒤로 보낸다
+		},2000);
+		
+	});
+</script>
+</head>
+<body>
+	<img src="../images/Hydrangeas.jpg">
+	<img src="../images/Jellyfish.jpg">
+	<img src="../images/Desert.jpg">
+	<img src="../images/Penguins.jpg">
+	<img src="../images/Koala.jpg"> <!-- 줄바꿈을 해서 여백이 생겨있다. -->
+</body>
+</html>

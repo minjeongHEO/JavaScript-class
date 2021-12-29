@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>toString</title>
+<script type="text/javascript">
+	var student = {};
+	
+	document.write(student+'<br>');
+	document.write(student.toString()+'<br>');//객체명을 출력하면 자동적으로 toString호출해서 [object Object]
+	document.write('-----------------------------<br>')
+	
+	//객체에 속성을 추가
+	student.이름 = '장영실';
+	student.직업 = '과학자';
+	
+	//객체에 메서드를 추가
+	student.toString = function(){ //.toSting일종의 재정의
+		var msg = '';
+		for(var key in student){
+			if(key!='toString'){
+				msg += key + ':' + student[key]+'<br>';
+			}
+		}
+		return msg; //중요!
+	};
+
+	//출력
+	document.write(student.toString() + '<br>');
+	document.write('------------------------------<Br>')
+	//toString()를 생략하고 호출하고 내부적으로 toString()을 자동호출
+	document.write(student);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

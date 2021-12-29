@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체에 HTML태그 추가</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//html():태그의 내용을 제어 innnerhtml의 속성을 메서드로 구현한거라고 볼수있ㄷ음
+		$('div').html('<h1>오늘은 화요일!!</h1>');
+		
+		//text():태그의 내용을 제어(텍스트로 데이터 추가) js의 textcontents
+		$('p').text('<h1>놀이동산의 곰인형</h1>')
+	});
+</script>
+</head>
+<body>
+	<div></div>
+	<p></p>
+</body>
+</html>

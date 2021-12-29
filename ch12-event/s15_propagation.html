@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 전달</title>
+<script type="text/javascript">
+	/*
+	 1>이벤트 버블링(기본/internetexporoler) : 자식 노드에서 부모 노드 순으로 이벤트를 실행하는 것을 의미한다.
+	
+	 이벤트 버블링
+	 div
+	 |		^
+	 div	|	자식노드에서 부모노드로 이벤트가 전파된다.
+	 |		|
+	 p		|
+	 |		|	
+	 span  이벤트발생
+	
+	
+	 2>이벤트 캡쳐링 : 부모 노드에서 자식 노드 순으로 이벤트를 실행하는 것을 의미한다.
+	
+	 div   이벤트발생
+	 |		|
+	 div	|	부모노드에서 자식노드로 이벤트가 전파된다.
+	 |		|
+	 p		V
+	 |			
+	 span  이벤트발생
+	 */
+	window.onload = function() {
+		//이벤트 연결
+		document.getElementById('header').onclick = function() {
+			alert('header');//브라우저가 만들어낸 요소라 html태그와 별개인??
+			this.style.background = 'pink';
+		};
+		document.getElementById('paragraph').onclick = function(event) {
+			alert('paragraph');
+			this.style.background = "yellow";
+
+			//이벤트 전파막기
+			event.stopPropagation();//header=pink로 안바뀜
+		};
+	};
+</script>
+</head>
+<body>
+	<h1 id="header">
+		header
+		<p id="paragraph">Paragraph</p>
+	</h1>
+</body>
+</html>

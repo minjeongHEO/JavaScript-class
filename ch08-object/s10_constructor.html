@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자 함수를 이용해서 객체를 생성하고 배열에 저장하기</title>
+<script type="text/javascript">
+	//생성자 함수 지정
+	function Student(name,korean,math,english,science){
+		//속성 지정
+		this.이름 = name;
+		this.국어 = korean;
+	 	this.수학 = math;
+	 	this.영어 = english;
+	 	this.과학 = science;
+	 	
+	 	//메서드 지정
+	 	this.getSum = function(){
+	 		return this.국어 + this.수학 + this.영어 + this.과학;
+	 	};
+	 	this.getAverage = function(){
+	 		return this.getSum() / 4;
+	 	};
+	 	this.toString = function(){
+	 		return this.이름 + ', ' + this.getSum() + ', ' + this.getAverage();
+	 	};
+	}
+
+	//배열 생성
+	var students = [];
+	//배열에 객체를 저장
+	students.push(new Student('홍길동',99,98,97,91));
+	students.push(new Student('박문수',94,92,91,92));
+	students.push(new Student('장영실',92,93,93,93));
+	students.push(new Student('김유신',95,94,96,97));
+	students.push(new Student('이순신',99,95,99,98));
+	
+	//출력
+	document.write('이름 , 총점, 평균<br>');
+		//배열로부터 인덱스를 받는다 인덱스 in 배열
+	for(var i in students){
+		document.write(students[i].toString() + '<br>'); //toString명시안해도 자동적으로 실행됨
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

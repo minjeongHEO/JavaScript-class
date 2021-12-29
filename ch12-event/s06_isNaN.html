@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>isNaN함수 활용</title>
+<script type="text/javascript">
+	function checkIt(){ //인라인방식엔 선언적함수를 보통 사용
+		var age = document.getElementById('age');
+		
+		//공백 제거를 위해 trim메서드를 사용함
+		if(age.value.trim()==''){
+			alert('나이를 입력하세요!');
+			age.focus();
+			return;
+		}
+		
+		if(isNaN(age.value)){//숫자가 아닌 경우 true
+			alert('숫자만 입력 가능');
+			age.focus();
+			return;
+		}//type="button"일 때는 return; 으로 함수를 빠져나간다.
+		//type="submit"버튼 일 때는 return false; 
+
+		
+		alert('나이는 ' + age.value+'살 입니다!');
+		
+	}
+</script>
+</head>
+<body>
+<form>
+	<input type="text" name="age" id="age" size="20"> <!-- 숫자필드라고 해서 꼭 타입을 number라고 하는게아니다. 선택의 문제 -->
+	<input type="button" value="나이확인" onclick="checkIt()">
+</form>
+</body>
+</html>

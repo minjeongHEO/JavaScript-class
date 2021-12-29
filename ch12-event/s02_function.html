@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인라인 이벤트 처리 - 함수 이용</title>
+<style type="text/css">
+	div{
+		background-color:orange;
+	}
+</style>
+<script type="text/javascript">
+	function whenClick(){
+		alert('CLICK');
+		
+	}
+</script>
+</head>
+<body>
+	<div id="header" onclick="whenClick();">클릭</div> <!-- 하나만 호출되므로 ;은 생략해도 된다 -->
+	<!-- 원래 스크립트 내에서 이벤트를 연결하는방식을 쓴다. -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 속성 처리</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//attr() : 속성과 관련된 모든 기능을 수행
+		//$('img').attr('width',100);
+		
+		$('img').attr('width',100).attr('height',100);//메서드가 다를때 이런식으로 쓰고 같은 메서드일떄는 이것보다 객체로 명시하는게 더 좋은 방법이다
+		//$('img').attr({}); //이런식
+		
+		$('img').attr({
+			width:100,height:100 //권장, 객체표기법에 의해서 key역할이기 때문에 ''안한다
+		});
+	});
+</script>
+</head>
+<body>
+	<img src="../images/Desert.jpg">
+	<img src="../images/Penguins.jpg">
+	<img src="../images/Koala.jpg">
+</body>
+</html>

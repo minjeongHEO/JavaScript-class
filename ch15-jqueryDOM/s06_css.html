@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 스타일 처리</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		//h1태그에 일괄적으로 스타일 부여
+		//$('h1').css('color','red');
+		
+		var color = ['red','yellow','purple'];
+		var background = ['gray','pink','yellow'];
+		
+		//h1태그에 서로다른 글자색을 부여
+		/* 
+		$('h1').css('color',function(index){ //??function(index)여기가 이해안됌
+			return color[index];
+		}); 
+		*/
+		
+		//h1태그에 글자색과 배경색 지정
+		$('h1').css({
+			color:function(index){
+				return color[index];
+			},
+			backgroundColor:function(index){
+				return background[index];
+			}
+		});
+		
+	});
+</script>
+
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>
+</body>
+</html>

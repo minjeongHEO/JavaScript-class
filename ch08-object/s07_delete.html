@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성 및 메서드 제거</title>
+<script type="text/javascript">
+	//객체 생성
+	var student = {};
+	
+	//객체에 속성을 추가
+	student.이름='홍길동';
+	student.취미='악기';
+	student.직업='경찰';
+	
+	//toString메서드 추가
+	//추가된것도 삭제된것도 확인해보자
+	student.toString = function(){
+		var output = '';
+		for (var key in this){
+			if(key != 'toString'){
+				output += key+ ':' + this[key] + '<br>' //this로 명시 하는게 좋음 
+			}
+		}
+		return output; //toString에서 return 꼭 명시!????
+	};
+	
+	document.write(student);//student.toString()으로 호출하는거랑 같음
+	document.write('----------------------<br>');
+	
+	//속성 제거
+	delete student.취미;
+	
+	document.write(student);
+
+	document.write('----------------------<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

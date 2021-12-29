@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onsubmit</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var form = document.getElementById('register_form');
+		//이벤트 연결
+		form.onsubmit=function(){
+			var name = document.getElementById('name');
+			if(name.value.trim()==''){//자바스크립트는 아무것도 입력안되어있을 떄 비어있다고 인식함
+				alert('이름을 입력하세요!');
+				name.value = '';//공백이 있을 경우 빈 문자열로 대체(공백을 없애줌)
+				name.focus();
+				return false;//submit 되지 않도록 처리 / 안하면 submit되버린다.
+			}
+			var id = document.getElementById('id');
+			if(id.value.trim()==''){
+				alert('아이디를 입력하세요!');
+				id.value = '';
+				id.focus();
+				return false;
+			}
+			var password = document.getElementById('password');
+			if(password.value.trim()==''){
+				alert('비밀번호를 입력하세요!');
+				password.value='';
+				password.focus();
+				return false;
+			}
+			var phone = document.getElementById('phone');
+			if(phone.value.trim()==''){
+				alert('전화번호를 입력하세요!');
+				phone.value = '';
+				phone.focus();
+				return false;
+			}
+		};
+	};
+</script>
+</head>
+<body>
+<form id="register_form" action="a.jsp" method="post">
+	<fieldset><!-- 의무는 아니고 활용할수 있다 -->
+		<legend>회원가입</legend>
+		<ul>
+			<li>
+				<label for="name">이름</label>
+				<input type="text" name="name" id="name" size="10" maxlength="10">
+			</li>
+			<li>
+				<label for="id">id</label>
+				<input type="text" name="id" id="id" size="10" maxlength="10">
+			</li>
+			<li>
+				<label for="password">비밀번호</label>
+				<input type="password" name="password" id="password" size="10" maxlength="10">
+			</li>
+			<li>
+				<label for="id">전화번호</label>
+				<input type="text" name="phone" id="phone" size="15" maxlength="13">
+			</li>
+		</ul>
+		<div align ="center">
+			<input type="submit" value="전송">
+		</div>
+	</fieldset>
+</form>
+</body>
+</html>

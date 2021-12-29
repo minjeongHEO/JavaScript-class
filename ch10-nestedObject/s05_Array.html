@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+<script type="text/javascript">
+/* 생성자함수형형태의 배열이있고(자바스크립트는 함수기반이므로 이게 디폴트)
+(기호형태의)대괄호 형태의 배열이 있고 중괄호 형태의 배열이 있다 */
+
+	//배열 생성
+	var array1 = new Array(); //빈 배열 
+	//요소 추가
+	array1[0] =10;
+	array1[1] =20;
+	array1[2] =30;
+	
+	//출력
+	document.write(array1[0] +'<br>');
+	document.write(array1[1] +'<br>');
+	document.write(array1[2] +'<br>');
+	document.write('--------------------<br>');
+	
+	//반복문을 이용한 요소의 출력
+	for(var i=0;i<array1.length;i++){
+		document.write('array1['+i+']:'+array1[i]+'<br>');
+	}
+	
+	document.write('=========for in 반복문활용=========<br>');
+	
+	//for in 반복문을 이용한 요소의 출력
+	for(var i in array1){
+		document.write(array1[i]+'<br>');
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

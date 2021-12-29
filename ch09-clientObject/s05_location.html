@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location</title>
+</head>
+<body>
+<input type="button" value="이동(href)" onclick="location.href='s01_window.html'"><!-- ''로 문자열로 이동? -->
+<input type="button" value="이동(assign)" onclick="location.assign('s02_window.html');"> <!-- ; 넣을수도 있고 생략할수도 있다 -->
+
+<!-- 주소를 히스토리 정보에 보관하여 back버튼 활성화 
+그정보를 지워서 뒤로가는 기능이 없다 -->
+
+<!-- 페이지 이동을 할수 있고 history정보가 지워짐 -->
+<input type="button" value="이동(replace)" onclick="location.replace('s02_window.html');">
+
+<!-- 새로고침 -->
+<input type = "button" value="새로고침" onclick="location.reload();">
+</body>
+</html>

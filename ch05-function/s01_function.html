@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+//두 함수 다 많이 씀
+//선언적 함수 
+	//(인자도 없고 리턴데이터도 없는형태)
+	function check(){
+		document.write('호출하면 동작함<br>');
+	}
+	//함수 호출
+	check();
+	
+//	인자앞에 var를 명시하면 오류, 그냥 변수만 명시한다
+	function check2(msg){ //(var msg) X
+		document.write(msg+'을 좋아합니다.<br>');
+	}
+	//함수 호출
+	check2('가을');
+	
+//	반환하는 데이터가 있는 경우
+	//js는 자료형키워드가 없어서 반환타입도 명시안한다.
+	function check3(num){
+		return num*num;
+	}
+	//함수호출
+	var number = check3(10);
+	document.write('number='+number+'<br>');
+	
+	document.write("=================익명함수==================<br>");
+	
+//익명 함수
+	//var play = function(){}; //함수의 이름이 없어서 변수명이 이름을 대신하고, 한라인으로 보기 때문에 뒤에;
+	
+	var play = function(){ //play가 함수명을 대신한다.
+		document.write('운동을 좋아해요~<br>');
+	}; 
+	//함수 호출
+	play(); //()가있어야 호출!
+	
+	var play2 = function(item){
+		document.write(item+'를 좋아합니다.<br>');
+	};
+	//함수호출
+	play2('축구');
+	
+	var play3 = function(x,y){
+		return x+y;
+	};
+	//함수 호출
+	var result = play3(5,8);
+	document.write('result='+result+'<br>');
+	
+	document.write("-----------------------------------------<br>");
+	
+	function checkIt(){
+		alert('오늘은 월요일 입니다.');
+	}
+	
+	
+</script>
+</head>
+<body>
+	<input type="button" value="확인" onclick="checkIt();"> 
+</body>
+</html>

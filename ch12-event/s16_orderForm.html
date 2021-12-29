@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품구매</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+	//상품의 가격 정보
+	var product = {
+		c0 : 200000,
+		c1 : 100000,
+		c2 : 50000,
+		c3 : 150000,
+		c4 : 100000
+	}; //중괄호 형태의객체애 넣었음
+
+	window.onload = function() {
+		var sum = 0;
+		var ship = 0;
+
+		var inputs = document.getElementsByClassName('select');
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].onclick = function() {
+				if (this.checked) {//체크박스 선택했을 떄
+					sum += product[this.id];//가격정보를 읽어온다
+				} else {//체크박스 해제시
+					sum -= product[this.id];
+				}
+
+				//sum이 0이면 배송비도 0
+				if (sum > 0 && sum < 300000) {
+					ship = 5000;
+				} else {
+					ship = 0;
+				}
+
+				//span태그에 명시
+				var spans = document.getElementsByTagName('span');
+				spans[0].innerHTML = sum;//총 상품가격
+				spans[1].innerHTML = ship;//배송비
+				spans[2].innerHTML = sum + ship;//총 상품가격 + 배송비
+
+			};
+		}
+	};
+</script>
+</head>
+<body>
+	<!--
+구매물건 : 가방(20만원), 코트(10만원), 청바지(5만원), 식사권(15만원), 신발(10만원)
+  -->
+	<h2>상품구매</h2>
+	<table>
+		<caption>구매상품 목록</caption>
+		<tr>
+			<td>
+				<img src="../images/bag.jpg">
+			</td>
+			<td>
+				<img src="../images/coat.jpg">
+			</td>
+			<td>
+				<img src="../images/jeans.jpg">
+			</td>
+			<td>
+				<img src="../images/giftCard.jpg">
+			</td>
+			<td>
+				<img src="../images/shoes.jpg">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input id="c0" class="select" type="checkbox" name="goods" value="bag">bag
+			</td>
+			<td>
+				<input id="c1" class="select" type="checkbox" name="goods" value="coat">coat
+			</td>
+			<td>
+				<input id="c2" class="select" type="checkbox" name="goods" value="jeans">jeans
+			</td>
+			<td>
+				<input id="c3" class="select" type="checkbox" name="goods" value="gift card">gift card
+			</td>
+			<td>
+				<input id="c4" class="select" type="checkbox" name="goods" value="shoes">shoes
+			</td>
+		</tr>
+		<tr id="price">
+			<td>(20만원)</td>
+			<td>(10만원)</td>
+			<td>(5만원)</td>
+			<td>(15만원)</td>
+			<td>(10만원)</td>
+		</tr>
+		<tr height="100">
+			<td colspan="5">
+				*<b>30만원 미만 결제</b>시 5,000원의 배송비가 추가됩니다.
+			</td>
+		</tr>
+		<tr>
+			<td id="preview" colspan="5">
+				총 상품가격 <span>0</span>원 + 총 배송비 <span>0</span> 원 = 총 주문금액 <span id="total">0</span> 원
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>let</title>
+<script type="text/javascript">
+/*
+블럭 레벨의 스코프 : let(변수), const(상수) (var보다 권장)
+ES6에서 변수를 정의하는데 let를 사용할 수 있고, 상수를 정의하는 데는 const를 사용할 수 있으며,
+이들은 블럭레벨의 스코프를 가진다.
+ */
+ 	for(let i=1;i<=3;i++){
+ 		document.write(i+'<br>');
+ 	}
+ 	//document.write(i);f //블럭 밖에서는 호출불가(i is not defined라고 콘솔에러)
+ 	
+ 	document.write('----------------------------<br>');
+ 	
+ 	function test1(){
+ 		let i = 20;//지역변수
+ 		document.write(i+'<br>');
+ 	}
+ 	//함수 호출
+ 	test1();
+ 	
+ 	//document.write(i+'<br>');//함수블럭 밖에서는 호출불가(i is not defined라고 콘솔에러)
+ 	
+ 	document.write('----------------------------<br>');
+
+ 	function test2(){
+ 		let a = 30;//지역변수
+ 		document.write(a+'<br>');
+ 		
+ 		//let a = 40;//오류 발생(동일한 명칭으로 변수 선언을 할 수 없다.) 아무것도 출력안됌
+ 		//document.write(a+'<br>'); //var가 아니라 let로, 중복허용 안함
+ 		
+ 	}
+ 	test2();
+ 	
+ 	document.write('----------------------------<br>');
+ 	
+ 	let n = 50;//전역 스코프로 인식
+ 	function test3(){
+ 		document.write(n+'<br>');
+ 	}
+ 	//함수 호출
+ 	test3();
+ 	
+ 	document.write(n+'<br>');
+ 	
+ 	document.write('----------------------------<br>');
+	
+ 	document.write(score);//let을 명시하면 변수 호이스팅이 적용되지 않음
+ 	let score; //undefined라고 안나오고 출력안됌 
+ 		
+
+ 	
+</script>
+</head>
+<body>
+
+</body>
+</html>

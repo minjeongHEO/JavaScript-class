@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery 연결</title>
+<!--  jquery 연결 방법 1) : js 파일 다운로드 후 파일 연결 -->
+<!-- <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script> -->
+<!--  jquery 연결 방법 2) : CDN(Contents Delivery Network)방식. (컨텐츠를 네트워크를 통해서 전해준다) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+	//문서가 준비 완료되면 매개변수로 전달된 함수를 실행
+	//window.onload= function(){};랑 같은거라고 보면 된다.
+	$(document).ready(function(){
+		alert('jQuery READY');
+		
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

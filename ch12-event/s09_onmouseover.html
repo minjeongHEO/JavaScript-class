@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 크기 변경하기</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var alink = document.getElementsByTagName('a');
+		var bigImg = document.getElementById('bigImg');
+		
+		for(var i=0;i<alink.length;i++){ //a태그가 2개니까 루프를 돌면서 읽어온다
+			alink[i].onmouseover = function(){
+				//이미지를 다시보이게하려면 display:에서none 속성을 지워준다
+				bigImg.style.display = ''; //img 태그를 노출시킴
+				//이벤트가 발생(this)한 a태그의 href속성에 저장된 큰 이미지 경로를 링크 
+				bigImg.src = this.href;
+				bigImg.width = 500;
+				bigImg.height = 350;
+				
+			};
+			alink[i].onmouseout = function(){
+				bigImg.style.display = 'none'; //img태그 숨기기
+			};
+			//a태그가 가지고있는 링크기능(기본 이벤트)을 제거해보자 
+			alink[i].onclick = function(){
+				return false;
+				
+			};
+		}
+	};
+</script>
+</head>
+<body>
+<div>
+<!-- a태그와 img태그에 이벤트 연결을한다 이제스크립트쪽으로 올라가보자 -->
+	<!-- 		큰이미지 								작은이미지 -->
+	<a href="../images/Penguins.jpg"><img src="../images/Penguins.jpg" width="83" alt="펭귄이미지"></a>
+	<a href="../images/Koala.jpg"><img src="../images/Koala.jpg" width="83" alt="코알라이미지"></a>
+</div>
+	<img id="bigImg" style="display:none;"> <!-- 처음ㅂ무터 큰이미지는 안보이도록 -->
+</body>
+</html>

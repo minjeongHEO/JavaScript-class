@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자를 이용해서 문서 객체 탐색</title>
+<script type="text/javascript">
+	window.onload = function() {
+		//선택자를 이용해서 문서 객체를 탐색
+		//자식선택자를 이용해서 복수의 태그 정보를 배열로 반환
+		var elems = document.querySelectorAll('ul > li')//querySelectorAll:복수의 태그를 읽어올 수 있게끔 배열(nodelist)로 반환
+
+		
+		var output = '';
+		for(var i=0; i<elems.length; i++){
+		output += elems[i].innerHTML + '\n';
+		}
+		alert(output); 
+
+		elems[0].style.background = 'yellow';
+	};
+</script>
+</head>
+<body>
+	<ul>
+		<li>Apple</li>
+		<li>Banana</li>
+		<li>Orange</li>
+	</ul>
+</body>
+</html>

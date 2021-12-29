@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 생성</title>
+<script type="text/javascript">
+	window.onload = function(){
+		//태그를 문자열로 인식하게 명시
+		var output = '';
+		output += '<ul>';
+		output += '	<li>Java</li>';
+		output += '	<li>Oracle</li>';
+		output += '	<li>HTML</li>';
+		output += '	<li>CSS</li>';
+		output += '	<li>JavaScript</li>';
+		output += '</ul>';
+		
+		//innerHTML: 속성을 이용해서 태그를 추가
+		//document.body.innerHTML = output;
+		
+		//textContent:태그들이 제기능을 못하고 화면에 텍스트로만 보여진다.
+		document.body.textContent = output;
+		
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

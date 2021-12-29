@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script type="text/javascript">
+/*
+ [문제]	이름		수입		지출		잔액(getBalance,세금 공제)		세금(5%,getTax)
+ 		홍길동	3000	2500
+ 		박문수	5000	1100
+ 		이순신	4000	3600
+ 		김유신	7000	4200
+ */
+
+ 	//배열 생성
+ 	var member = [];
+ 	
+ 	//객체저장
+ 	member.push({이름:'홍길동',수입:3000,지출:2500});
+ 	member.push({이름:'박문수',수입:5000,지출:1100});
+ 	member.push({이름:'이순신',수입:4000,지출:3600});
+ 	member.push({이름:'김유신',수입:7000,지출:4200});
+ 	
+ 	//배열내의 모든 객체에 메서드(잔액과 세금) 추가
+ 		//인덱스 in 배열
+ 	for(var i in member){
+ 		
+ 		//세금구하는 메서드 추가
+ 		member[i].getTax = function(){
+ 			return this.수입 * 0.05;
+ 		};
+ 			
+ 		//잔액구하는 메서드 추가
+ 		member[i].getBalance = function(){
+ 			return this.수입 - this.지출 - this.getTax();
+ 		};
+ 		
+ 		//정보를 반환하는 메서드 추가(있어도 되고 없어도 되고)
+ 		member[i].toString = function(){
+ 			return this.이름 + ',' +this.수입 
+ 			+','+this.지출+ ',' +this.getBalance()+ ',' +this.getTax();
+ 		};
+ 	}
+ 	
+ 	//출력
+ 	document.write('이름, 수입, 지출, 잔액(세금공제), 세금<br>');
+ 	
+ 	for(var i in member){
+ /* 		document.write(member[i].이름+', ' 
+ 				+member[i].getBalance()+', ' 
+ 				+ member[i].getTax()+'<br>');
+ 	 */
+ 		document.write(member[i].toString()+'<br>');
+ 	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
