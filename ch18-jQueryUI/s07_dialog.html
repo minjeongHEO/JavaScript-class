@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼 눌러서 dialog</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#dialog').dialog({
+			modal:true, //modal: 다이얼로그 창이 떠있을 땐 부모영역을 선택할 수 없다.
+			resizable:false,  //default값은 true. false=창의 크기를 변경 불가능
+			buttons:{
+				'Delete all items':function(){ //공백때문에 ''
+					$(this).dialog('close');
+				},
+				Cancel:function(){
+					$(this).dialog('close');
+					
+				}
+			}
+		});
+		
+		
+	});
+</script>
+
+</head>
+<body>
+<!-- 다이얼로그 창 -->
+<div id="dialog" title="Basic dialog">
+	<p>This is the default dialog. 
+	   This is the default dialog.
+	   This is the default dialog.
+	   This is the default dialog.</p>
+</div>
+
+<div>Hello World!!</div> 
+
+</body>
+</html>

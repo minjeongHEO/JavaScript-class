@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼 눌러서 dialog</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#dialog').dialog({
+			autoOpen:false,
+			show:{
+				effect:'blind',
+				duration:1000
+			},hide:{
+				effect:'explode',
+				duration:1000
+			}
+		});
+		
+		//버튼을 눌렀을 떄 나타나게끔 이벤트 연결
+		$('#opener').click(function(){
+			//다이얼로그를 노출시킴
+			$('#dialog').dialog('open');
+		});
+		
+	});
+</script>
+
+</head>
+<body>
+<!-- 다이얼로그 창 -->
+<div id="dialog" title="Basic dialog">
+	<p>This is the default dialog. 
+	   This is the default dialog.
+	   This is the default dialog.
+	   This is the default dialog.</p>
+</div>
+
+<button id="opener">Open Dialog</button>
+
+</body>
+</html>

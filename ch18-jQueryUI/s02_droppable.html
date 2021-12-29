@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Draggable</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<style type="text/css">
+#draggable {width:100px;height:100px;padding:0.5em;float:left;margin:10px 10px 10px 0; } /* 상우하좌 */
+#droppable {width:150px;height:150px;padding:0.5em;float:left;margin:10px;}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#draggable').draggable();
+		$('#droppable').droppable({
+			drop:function(){//영역에 진입하고 놓여졌을 때
+				$(this).addClass('ui-state-highlight')
+						.find('p')
+						.html('Dropped!')
+			},
+			out:function(){//영역을 벗어났을 때
+				$(this).removeClass('ui-state-highlight')
+						.find('p')
+						.html('Drop here');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="draggable" class="ui-widget-content">
+		<p>Drag me around</p>
+	</div>
+	<div id="droppable" class="ui-widget-header">
+		<p>Drop here</p>
+	</div>
+
+</body>
+</html>
