@@ -16,8 +16,8 @@
 		$('#droppable').droppable({
 			drop:function(){//영역에 진입하고 놓여졌을 때
 				$(this).addClass('ui-state-highlight')
-						.find('p')
-						.html('Dropped!')
+				  		.find('p') //div태그안에서 p태그를 찾아라 찾으면
+						.html('Dropped!')//내용을 제어한다.
 			},
 			out:function(){//영역을 벗어났을 때
 				$(this).removeClass('ui-state-highlight')
